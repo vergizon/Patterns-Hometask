@@ -12,19 +12,13 @@ import static java.time.Duration.ofSeconds;
 class DateOfTheMeetingPlanningTest {
 
 
-    @BeforeAll
-   static void setUpAll() {}
-
     @BeforeEach
     void setup() {
         open("http://localhost:9999");
         $(By.cssSelector("[data-test-id = 'date'] input")).sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME));
         $(By.cssSelector("[data-test-id = 'date'] input")).sendKeys(Keys.DELETE);
     }
-    @AfterEach
-    void teardown() {
-        closeWebDriver();
-    }
+
 
     String successPlanCssSelector = "[data-test-id = 'success-notification'] .notification__content";
     String replanCssSelector = "[data-test-id = 'replan-notification'] .notification__content";
